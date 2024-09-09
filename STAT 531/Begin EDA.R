@@ -1,8 +1,7 @@
 ## Beginning Exploratory Data Analysis
 ## Using the ggplot() function to create visualizations
 
-## install.packages("ggplot2")
-## setwd()
+install.packages("ggplot2")
 
 library(ggplot2)
 
