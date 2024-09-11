@@ -25,26 +25,24 @@ View(weather)
 
 ## Basic Scatterplot Template
 
-ggplot(data =    , mapping = aes(x =     , y =     )) +
-  geom_point( )
+ggplot(data=weather, mapping=aes(x=temp, y=dewp, color=factor(month)))+
+  geom_point()
 
 
-ggplot(data = , mapping = aes(x = , y = )) +
+ggplot(data = weather, mapping =  aes(x = temp, y = dewp)) +
   geom_point(alpha = , size = , color =  )
 
 
 
 ## Subsets using facet_wrap and facet_grid
 
-ggplot(data = , mapping = aes(x = , fill = )) +
-  geom_histogram(binwidth = , color = ) +
-  facet_wrap(~ , ncol = )
+ggplot(data = weather, mapping = aes(x = temp, y=dewp, color=factor(month))) +
+  geom_point() +
+  facet_wrap(~ origin)
 
-ggplot(data = , mapping = aes(x = , fill = )) +
-  geom_histogram(binwidth = , color = ) +
-  facet_grid(  ~  )
-
-
+ggplot(data = weather, mapping = aes(x = temp, y=dewp, color=factor(month))) +
+  geom_point() +
+  facet_grid(origin ~ quarter)
 
 
 ## Histogram and Density Plot
