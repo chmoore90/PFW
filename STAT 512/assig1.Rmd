@@ -1,0 +1,75 @@
+---
+title: "Question 8"
+author: "Chloe Moore"
+date: "`r Sys.Date()`"
+output:
+  word_document: default
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#### Part a(i)
+
+```{r}
+data = read.csv("WiscNursingHome.csv")
+
+cor(data$TPY, log(data$TPY))
+
+```
+The correlation value is quite close to 1, which means that TPY and it's log value are strongly positively correlated.
+
+#### Part a(ii)
+```{r}
+cor(data[c("TPY", "NUMBED", "SQRFOOT")], use = "complete.obs")
+```
+All the correlations we see here are close to 1. This means TPY, NUMBED, and SQRFOOT are all positively correlated with each other.
+
+#### Part a(iii)
+
+```{r}
+cor(data$TPY, data$NUMBED/10)
+```
+This number is very close the the original correlation value for TPY and NUMBED (0.9836241). This could indicate that the positive correlation between these variables remains strong, regardless of the value of NUMBED.
+
+#### Part b)
+
+```{r, echo=FALSE}
+plot(data$NUMBED, data$TPY)
+plot(data$SQRFOOT, data$TPY)
+```
+The TPY and NUMBED plot has the data points clustered closely together along a linear trend line. This suggest a strong correlation between these variables, and this is supported by the correlation value we found earlier. The TPY and SQRFOOT plot also showed a linear trend, but the data was more scattered. This increased variance suggests the correlation between TPY and SQRFOOT is not as strong (but still definitely present!) as NUMBED. This is supported by the correlation values we found earlier too.
+
+#### Part c(i)
+```{r}
+fit1 = lm(TPY ~ NUMBED, data)
+summary(fit1)
+```
+
+R^2 = 0.9678, t-value = 146.611. These results suggest a very good fit, since the R^2 is close to 1 and t-value is relatively high.
+
+#### Part c(ii)
+```{r}
+fit2 = lm(TPY ~ SQRFOOT, data)
+summary(fit2)
+```
+R^2 = 0.6756, t-value = 38.32. The model using NUMBED fit better, as it had a R^2 score closer to 1.
+
+#### Part c(iii)
+```{r}
+fit3 = lm(log(TPY) ~ log(NUMBED), data)
+summary(fit3)
+```
+
+#### Part c(iv)
+```{r}
+fit4 = lm(log(TPY) ~ log(SQRFOOT), data)
+summary(fit4)
+```
+
+
+
+

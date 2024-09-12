@@ -1,0 +1,317 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Question 8},
+  pdfauthor={Chloe Moore},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Question 8}
+\author{Chloe Moore}
+\date{2024-09-11}
+
+\begin{document}
+\maketitle
+
+\hypertarget{part-ai}{%
+\paragraph{Part a(i)}\label{part-ai}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{data }\OtherTok{=} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"WiscNursingHome.csv"}\NormalTok{)}
+
+\FunctionTok{cor}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{TPY, }\FunctionTok{log}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{TPY))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.9288011
+\end{verbatim}
+
+The correlation value is quite close to 1, which means that TPY and it's
+log value are strongly positively correlated.
+
+\hypertarget{part-aii}{%
+\paragraph{Part a(ii)}\label{part-aii}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cor}\NormalTok{(data[}\FunctionTok{c}\NormalTok{(}\StringTok{"TPY"}\NormalTok{, }\StringTok{"NUMBED"}\NormalTok{, }\StringTok{"SQRFOOT"}\NormalTok{)], }\AttributeTok{use =} \StringTok{"complete.obs"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##               TPY    NUMBED   SQRFOOT
+## TPY     1.0000000 0.9836241 0.8219443
+## NUMBED  0.9836241 1.0000000 0.8136223
+## SQRFOOT 0.8219443 0.8136223 1.0000000
+\end{verbatim}
+
+All the correlations we see here are close to 1. This means TPY, NUMBED,
+and SQRFOOT are all positively correlated with each other.
+
+\hypertarget{part-aiii}{%
+\paragraph{Part a(iii)}\label{part-aiii}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cor}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{TPY, data}\SpecialCharTok{$}\NormalTok{NUMBED}\SpecialCharTok{/}\DecValTok{10}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.9837719
+\end{verbatim}
+
+This number is very close the the original correlation value for TPY and
+NUMBED (0.9836241). This could indicate that the positive correlation
+between these variables remains strong, regardless of the value of
+NUMBED.
+
+\hypertarget{part-b}{%
+\paragraph{Part b)}\label{part-b}}
+
+\includegraphics{assig1_files/figure-latex/unnamed-chunk-4-1.pdf}
+\includegraphics{assig1_files/figure-latex/unnamed-chunk-4-2.pdf} The
+TPY and NUMBED plot has the data points clustered closely together along
+a linear trend line. This suggest a strong correlation between these
+variables, and this is supported by the correlation value we found
+earlier. The TPY and SQRFOOT plot also showed a linear trend, but the
+data was more scattered. This increased variance suggests the
+correlation between TPY and SQRFOOT is not as strong (but still
+definitely present!) as NUMBED. This is supported by the correlation
+values we found earlier too.
+
+\hypertarget{part-ci}{%
+\paragraph{Part c(i)}\label{part-ci}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{fit1 }\OtherTok{=} \FunctionTok{lm}\NormalTok{(TPY }\SpecialCharTok{\textasciitilde{}}\NormalTok{ NUMBED, data)}
+\FunctionTok{summary}\NormalTok{(fit1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = TPY ~ NUMBED, data = data)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -63.249  -2.067   0.866   3.967  37.064 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(>|t|)    
+## (Intercept) -0.877827   0.692503  -1.268    0.205    
+## NUMBED       0.927191   0.006324 146.611   <2e-16 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 8.538 on 715 degrees of freedom
+## Multiple R-squared:  0.9678, Adjusted R-squared:  0.9678 
+## F-statistic: 2.149e+04 on 1 and 715 DF,  p-value: < 2.2e-16
+\end{verbatim}
+
+R\^{}2 = 0.9678, t-value = 146.611. These results suggest a very good
+fit, since the R\^{}2 is close to 1 and t-value is relatively high.
+
+\hypertarget{part-cii}{%
+\paragraph{Part c(ii)}\label{part-cii}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{fit2 }\OtherTok{=} \FunctionTok{lm}\NormalTok{(TPY }\SpecialCharTok{\textasciitilde{}}\NormalTok{ SQRFOOT, data)}
+\FunctionTok{summary}\NormalTok{(fit2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = TPY ~ SQRFOOT, data = data)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -114.501  -15.391   -2.426   15.615  126.599 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(>|t|)    
+## (Intercept) 33.54754    1.78645   18.78   <2e-16 ***
+## SQRFOOT      1.11786    0.02917   38.32   <2e-16 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 27.14 on 705 degrees of freedom
+##   (10 observations deleted due to missingness)
+## Multiple R-squared:  0.6756, Adjusted R-squared:  0.6751 
+## F-statistic:  1468 on 1 and 705 DF,  p-value: < 2.2e-16
+\end{verbatim}
+
+R\^{}2 = 0.6756, t-value = 38.32. The model using NUMBED fit better, as
+it had a R\^{}2 score closer to 1.
+
+\hypertarget{part-ciii}{%
+\paragraph{Part c(iii)}\label{part-ciii}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{fit3 }\OtherTok{=} \FunctionTok{lm}\NormalTok{(}\FunctionTok{log}\NormalTok{(TPY) }\SpecialCharTok{\textasciitilde{}} \FunctionTok{log}\NormalTok{(NUMBED), data)}
+\FunctionTok{summary}\NormalTok{(fit3)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = log(TPY) ~ log(NUMBED), data = data)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -0.89233 -0.01923  0.01741  0.05768  0.29396 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(>|t|)    
+## (Intercept) -0.163315   0.036045  -4.531 6.88e-06 ***
+## log(NUMBED)  1.015739   0.008038 126.372  < 2e-16 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 0.1058 on 715 degrees of freedom
+## Multiple R-squared:  0.9571, Adjusted R-squared:  0.9571 
+## F-statistic: 1.597e+04 on 1 and 715 DF,  p-value: < 2.2e-16
+\end{verbatim}
+
+\hypertarget{part-civ}{%
+\paragraph{Part c(iv)}\label{part-civ}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{fit4 }\OtherTok{=} \FunctionTok{lm}\NormalTok{(}\FunctionTok{log}\NormalTok{(TPY) }\SpecialCharTok{\textasciitilde{}} \FunctionTok{log}\NormalTok{(SQRFOOT), data)}
+\FunctionTok{summary}\NormalTok{(fit4)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = log(TPY) ~ log(SQRFOOT), data = data)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -1.73615 -0.15269  0.02281  0.19078  1.06551 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)   1.83032    0.06797   26.93   <2e-16 ***
+## log(SQRFOOT)  0.68163    0.01800   37.87   <2e-16 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 0.2925 on 705 degrees of freedom
+##   (10 observations deleted due to missingness)
+## Multiple R-squared:  0.6704, Adjusted R-squared:   0.67 
+## F-statistic:  1434 on 1 and 705 DF,  p-value: < 2.2e-16
+\end{verbatim}
+
+\end{document}
