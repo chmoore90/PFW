@@ -35,13 +35,14 @@ for i in range(len(page_li)):
 page_td = soup.find_all("td")
 
 for i in page_td:
-    if "(focus city)" in i.get_text():              # skip focus cities
+    text = i.get_text()
+    if "(focus city)" in text:              # skip focus cities
         continue
     # STILL INCLUDES AIRPORTS (but I don't think that matters)
 
     # remove extra characters from end of names (airlines ended with '\n')
-    str_len = len(i.get_text()) - 1
-    all_airlines.append(i.get_text()[:str_len])
+    trunc = len(text) - 1
+    all_airlines.append(text[:trunc])
 
 
 ## COMBINING INTO ONE DATAFRAME ###
