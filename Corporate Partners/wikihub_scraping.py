@@ -2,9 +2,10 @@ from bs4 import BeautifulSoup
 import requests
 import pandas as pd
 
-# requests to get site
+# preparing soup
 url = "https://en.wikipedia.org/wiki/List_of_hub_airports"
 site = requests.get(url)
+soup = BeautifulSoup(site.text, "lxml")
 
 all_airlines = []
 letters = ["G", "H", "I", "J", "K", "L", "M"]
@@ -12,8 +13,7 @@ letters = ["G", "H", "I", "J", "K", "L", "M"]
 
 ### LI HTML TAGS ###
 
-# preparing soup/page to search
-soup = BeautifulSoup(site.text, "lxml")
+# page to search
 page_li = soup.find_all("li")
 
 for i in range(len(page_li)):
