@@ -26,10 +26,10 @@ for i in page:
             # unzipping zip file, appending dataframe to dfs list
             z = ZipFile(BytesIO(response.content))
             df = pd.read_csv(z.open(z.namelist()[-1]), sep="|", header=None)
-            df.rename(columns={5: "origin", 9: "destin", 10: "code"}, inplace=True)
             dfs.append(df)
 
 # compiling datasets into one
-data = pd.concat(dfs)[["origin", "destin", "code"]]
+data = pd.concat(dfs)[[5, 9, 10]]
+data.rename(columns={5: "origin", 9: "destin", 10: "airline"}, inplace=True)
 
 print(data.head(50))
