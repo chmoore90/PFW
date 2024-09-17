@@ -1,17 +1,19 @@
 '''
-Simple script to generate a list of airline codes from the web.
-To use, run "from airline_codes import airline_codes"
+Simple script to generate a pandas dataframe of airline codes from the web.
+To use, run "from airline_codes import df_airline_codes"
 '''
 
-from bs4 import BeautifulSoup
-import requests
+import pandas as pd
 
-# requests to get site
-url = "https://airlinecodes.info/iata"
-site = requests.get(url)
+url = "https://airlinecodes.info/iata/"
+suffixes = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S",
+            "T", "U", "V", "W", "X", "Y", "Z", "0"]
+codes = []
 
-airline_codes = []
+for letter in suffixes:
+    data = pd.read_html(url + letter)
+    for i in data:
+        codes.append(i)
 
-# preparing soup
-soup = BeautifulSoup(site.text, "lxml")
-page = soup.find_all("td")
+df_airline_codes = pd.concat(codes)
+print(df_airline_codes.head(10))
