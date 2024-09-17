@@ -12,4 +12,8 @@ soup = BeautifulSoup(site.text, "lxml")
 page = soup.find_all("td")
 
 for i in page:
-    airports.append(i.get_text())
+    text = i.get_text()
+    if len(text) == 3:
+        airports.append(i.get_text())
+
+print(airports)
