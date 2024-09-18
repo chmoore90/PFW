@@ -17,17 +17,27 @@ letters = ["G", "H", "I", "J", "K", "L", "M"]
 page_li = soup.find_all("li")
 
 for i in range(len(page_li)):
+    text = page_li[i].get_text()
     # narrow range to just include the listed airlines (eliminate formatting, resources tab, etc)
     if i < 183:
         continue
     elif i > 985:
         continue
-    elif "\n" in page_li[i].get_text():             # skip non-airline entries
+    elif "\n" in text:             # skip non-airline entries
         continue
-    elif "(focus city)" in page_li[i].get_text():   # skip focus cities
+    elif "(focus city)" in text:   # skip focus cities
         continue
 
-    all_airlines.append(page_li[i].get_text())
+    # removing parentheses from ends
+    if "[" in text:
+        text = text.split("[", 1)[0]
+    if "(primary hub)" in text:
+        text = text.split("(", 1)[0]
+    if "(base)" in text:
+        text = text.split("(", 1)[0]
+
+    all_airlines.append(text.strip())
+
 
 ### TD HTML TAGS ###
 
@@ -35,18 +45,29 @@ for i in range(len(page_li)):
 page_td = soup.find_all("td")
 
 for i in page_td:
-    text = i.get_text()
+    text: str = i.get_text()
     if "(focus city)" in text:              # skip focus cities
         continue
-    # STILL INCLUDES AIRPORTS (but I don't think that matters)
+    # STILL INCLUDES AIRPORTS, SOME CITY NAMES (but I don't think that matters)
 
-    # remove extra characters from end of names (airlines ended with '\n')
-    trunc = len(text) - 1
-    all_airlines.append(text[:trunc])
+    # remove "[X]" from entries
+    if "[" in text:
+        text = text.split("[", 1)[0]
+
+    # SPECIAL CASE: two entries got consolidated, separated with "\n". This only occurred once (that I could tell)
+    if text == "Eurowings\nCondor Airlines":
+        pair = text.split("\n")
+        for each in pair:
+            all_airlines.append(each)
+        continue
+
+    all_airlines.append(text.strip())
 
 
 ## COMBINING INTO ONE DATAFRAME ###
 
-df = pd.DataFrame(all_airlines, columns=["Airline"]).groupby("Airline").size()
+df = pd.DataFrame(all_airlines, columns=["Airline"])
+df_counts = df.groupby("Airline").size()
 
-print(df)
+pd.reset_option('display.max_rows')
+print(df["Airline"].value_counts())
