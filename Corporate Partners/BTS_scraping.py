@@ -10,7 +10,7 @@ site = requests.get(site_url)
 soup = BeautifulSoup(site.text, "lxml")
 page = soup.find_all("a", href=True)
 
-# list of files
+# list of data frames
 dfs = []
 
 # creating list of dataframes from website zip files
@@ -24,12 +24,12 @@ for i in page:
             response = requests.get(f"https://www.bts.gov{link_url}", parameters)
 
             # unzipping zip file, appending dataframe to dfs list
-            z = ZipFile(BytesIO(response.content))
-            df = pd.read_csv(z.open(z.namelist()[-1]), sep="|", header=None)
+            zip = ZipFile(BytesIO(response.content))
+            df = pd.read_csv(zip.open(zip.namelist()[-1]), sep="|", header=None)[[2, 6, 10]]
             dfs.append(df)
 
 # compiling datasets into one
-data = pd.concat(dfs)[[5, 9, 10]]
-data.rename(columns={5: "origin", 9: "destin", 10: "airline"}, inplace=True)
+data = pd.concat(dfs)
+data.rename(columns={2: "origin", 6: "destin", 10: "airline"}, inplace=True)
 
-print(data.head(50))
+print(data.head(20))
