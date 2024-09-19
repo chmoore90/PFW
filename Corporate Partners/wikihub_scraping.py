@@ -67,7 +67,7 @@ for i in page_td:
 ## COMBINING INTO ONE DATAFRAME ###
 
 df = pd.DataFrame(all_airlines, columns=["Airline"])
-df_counts = df.groupby("Airline").size()
+df_trim = df[df["Airline"].str[0].isin(letters)]
 
-pd.reset_option('display.max_rows')
-print(df["Airline"].value_counts())
+df_counts = df_trim.groupby("Airline").size()
+print(df_counts)
