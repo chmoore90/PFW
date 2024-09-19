@@ -16,8 +16,8 @@ dfs = []
 # creating list of dataframes from website zip files
 for i in page:
     date = i.get_text()
-    # LIMITING: to dates 2024
-    if date[-4:] == "2024":
+    # LIMITING: to dates 2022-2024
+    if date[-4:] == "2024" or date[-4:] == "2023" or date[-4:] == "2022":
         link_url = i["href"]
         if link_url.startswith("/sites/bts.dot.gov/files/docs/airline-data/domestic-segments/"):
             parameters = {"downloadformat" : "csv"}
@@ -29,7 +29,7 @@ for i in page:
             dfs.append(df)
 
 # compiling datasets into one
-data = pd.concat(dfs)
-data.rename(columns={2: "origin", 6: "destin", 10: "airline"}, inplace=True)
+flights_data = pd.concat(dfs)
+flights_data.rename(columns={2: "origin", 6: "destin", 10: "airline"}, inplace=True)
 
-print(data.head(20))
+print(flights_data.head(20))

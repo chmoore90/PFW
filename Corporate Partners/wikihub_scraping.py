@@ -7,9 +7,7 @@ url = "https://en.wikipedia.org/wiki/List_of_hub_airports"
 site = requests.get(url)
 soup = BeautifulSoup(site.text, "lxml")
 
-all_airlines = []
-letters = ["G", "H", "I", "J", "K", "L", "M"]
-
+all_hubs_raw = []
 
 ### LI HTML TAGS ###
 
@@ -18,56 +16,27 @@ page_li = soup.find_all("li")
 
 for i in range(len(page_li)):
     text = page_li[i].get_text()
-    # narrow range to just include the listed airlines (eliminate formatting, resources tab, etc)
+    # narrow range to just include the listed hubs (eliminate formatting, resources tab, etc)
     if i < 183:
         continue
     elif i > 985:
         continue
-    elif "\n" in text:             # skip non-airline entries
-        continue
-    elif "(focus city)" in text:   # skip focus cities
+
+    if "\n" not in text:
         continue
 
-    # removing parentheses from ends
-    if "[" in text:
-        text = text.split("[", 1)[0]
-    if "(primary hub)" in text:
-        text = text.split("(", 1)[0]
-    if "(base)" in text:
-        text = text.split("(", 1)[0]
-
-    all_airlines.append(text.strip())
+    text = text.split("\n", 1)[0]
+    all_hubs_raw.append(text.strip())
 
 
 ### TD HTML TAGS ###
 
-# preparing new page to search
-page_td = soup.find_all("td")
+tables = pd.read_html(url)
+tables[0] = tables[0].dropna()
 
-for i in page_td:
-    text: str = i.get_text()
-    if "(focus city)" in text:              # skip focus cities
-        continue
-    # STILL INCLUDES AIRPORTS, SOME CITY NAMES (but I don't think that matters)
-
-    # remove "[X]" from entries
-    if "[" in text:
-        text = text.split("[", 1)[0]
-
-    # SPECIAL CASE: two entries got consolidated, separated with "\n". This only occurred once (that I could tell)
-    if text == "Eurowings\nCondor Airlines":
-        pair = text.split("\n")
-        for each in pair:
-            all_airlines.append(each)
-        continue
-
-    all_airlines.append(text.strip())
-
+table_data = pd.concat(tables)["Airport"].drop_duplicates().to_list()
 
 ## COMBINING INTO ONE DATAFRAME ###
 
-df = pd.DataFrame(all_airlines, columns=["Airline"])
-df_trim = df[df["Airline"].str[0].isin(letters)]
-
-df_counts = df_trim.groupby("Airline").size()
-print(df_counts)
+for i in table_data:
+    all_hubs_raw.append(i)
