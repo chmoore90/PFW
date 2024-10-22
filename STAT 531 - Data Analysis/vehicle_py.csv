@@ -1,0 +1,104 @@
+,Brand,Model,Accel,TopSpeed,Range,Efficiency,FastCharge,RapidCharge,PowerTrain,PlugType,BodyStyle,Segment,Seats,PriceEuro
+0,Tesla ,Model 3 Long Range Dual Motor,4.6,233,450,161,940.0,Rapid charging possible,All Wheel Drive,Type 2 CCS,Sedan,D,5,61582.8
+1,Volkswagen ,ID.3 Pure,10.0,160,270,167,250.0,Rapid charging possible,Rear Wheel Drive,Type 2 CCS,Hatchback,C,5,33300.0
+2,Polestar ,2,4.7,210,400,181,620.0,Rapid charging possible,All Wheel Drive,Type 2 CCS,Liftback,D,5,62648.40000000001
+3,BMW ,iX3 ,6.8,180,360,206,560.0,Rapid charging possible,Rear Wheel Drive,Type 2 CCS,SUV,D,5,75524.40000000001
+4,Honda ,e ,9.5,145,170,168,190.0,Rapid charging possible,Rear Wheel Drive,Type 2 CCS,Hatchback,B,4,36626.670000000006
+5,Lucid ,Air ,2.8,250,610,180,620.0,Rapid charging possible,All Wheel Drive,Type 2 CCS,Sedan,F,5,116550.00000000001
+6,Volkswagen ,e-Golf ,9.6,150,190,168,220.0,Rapid charging possible,Front Wheel Drive,Type 2 CCS,Hatchback,C,5,35409.0
+7,Peugeot ,e-208 ,8.1,150,275,164,420.0,Rapid charging possible,Front Wheel Drive,Type 2 CCS,Hatchback,B,5,32947.020000000004
+8,Tesla ,Model 3 Standard Range Plus,5.6,225,310,153,650.0,Rapid charging possible,Rear Wheel Drive,Type 2 CCS,Sedan,D,5,51481.8
+9,Audi ,Q4 e-tron ,6.3,180,400,193,540.0,Rapid charging possible,All Wheel Drive,Type 2 CCS,SUV,D,5,61050.00000000001
+10,Mercedes ,EQC 400 4MATIC,5.1,180,370,216,440.0,Rapid charging possible,All Wheel Drive,Type 2 CCS,SUV,D,5,77127.24
+11,Nissan ,Leaf ,7.9,144,220,164,230.0,Rapid charging possible,Front Wheel Drive,Type 2 CHAdeMO,Hatchback,C,5,32449.74
+12,Hyundai ,Kona Electric 64 kWh,7.9,167,400,160,380.0,Rapid charging possible,Front Wheel Drive,Type 2 CCS,SUV,B,5,45282.450000000004
+13,BMW ,i4 ,4.0,200,450,178,650.0,Rapid charging possible,Rear Wheel Drive,Type 2 CCS,Sedan,D,5,72150.0
+14,Hyundai ,IONIQ Electric,9.7,165,250,153,210.0,Rapid charging possible,Front Wheel Drive,Type 2 CCS,Liftback,C,5,38249.490000000005
+15,Volkswagen ,ID.3 Pro S,7.9,160,440,175,590.0,Rapid charging possible,Rear Wheel Drive,Type 2 CCS,Hatchback,C,4,45438.96000000001
+16,Porsche ,Taycan Turbo S,2.8,260,375,223,780.0,Rapid charging possible,All Wheel Drive,Type 2 CCS,Sedan,F,4,200666.91
+17,Volkswagen ,e-Up! ,11.9,130,195,166,170.0,Rapid charging possible,Front Wheel Drive,Type 2 CCS,Hatchback,A,4,23777.31
+18,MG ,ZS EV,8.2,140,220,193,260.0,Rapid charging possible,Front Wheel Drive,Type 2 CCS,SUV,B,5,33300.0
+19,Mini ,Cooper SE ,7.3,150,185,156,260.0,Rapid charging possible,Front Wheel Drive,Type 2 CCS,Hatchback,B,4,35165.91
+20,Opel ,Corsa-e ,8.1,150,275,164,420.0,Rapid charging possible,Front Wheel Drive,Type 2 CCS,Hatchback,B,5,32352.06
+21,Tesla ,Model Y Long Range Dual Motor,5.1,217,425,171,930.0,Rapid charging possible,All Wheel Drive,Type 2 CCS,SUV,D,7,65068.200000000004
+22,Skoda ,Enyaq iV 50,10.0,160,290,179,230.0,Rapid charging possible,Rear Wheel Drive,Type 2 CCS,SUV,C,5,38850.0
+23,Audi ,e-tron GT ,3.5,240,425,197,850.0,Rapid charging possible,All Wheel Drive,Type 2 CCS,Sedan,F,4,138750.0
+24,Tesla ,Model 3 Long Range Performance,3.4,261,435,167,910.0,Rapid charging possible,All Wheel Drive,Type 2 CCS,Sedan,D,5,68242.8
+25,Volkswagen ,ID.4 ,7.5,160,420,183,560.0,Rapid charging possible,Rear Wheel Drive,Type 2 CCS,SUV,C,5,49950.00000000001
+26,Volkswagen ,ID.3 Pro,9.0,160,350,166,490.0,Rapid charging possible,Rear Wheel Drive,Type 2 CCS,Hatchback,C,5,36630.0
+27,Volvo ,XC40 P8 AWD Recharge,4.9,180,375,200,470.0,Rapid charging possible,All Wheel Drive,Type 2 CCS,SUV,C,5,67085.07
+28,BMW ,i3 120 Ah,7.3,150,235,161,270.0,Rapid charging possible,Rear Wheel Drive,Type 2 CCS,Hatchback,B,4,42198.87
+29,Peugeot ,e-2008 SUV ,8.5,150,250,180,380.0,Rapid charging possible,Front Wheel Drive,Type 2 CCS,SUV,B,5,38140.71000000001
+30,Audi ,e-tron 50 quattro,6.8,190,280,231,450.0,Rapid charging possible,All Wheel Drive,Type 2 CCS,SUV,E,5,74767.38
+31,Kia ,e-Niro 64 kWh,7.8,167,370,173,350.0,Rapid charging possible,Front Wheel Drive,Type 2 CCS,SUV,C,5,42296.55
+32,Renault ,Zoe ZE50 R110,11.4,135,315,165,230.0,Rapid charging possible,Front Wheel Drive,Type 2 CCS,Hatchback,B,5,34614.240000000005
+33,Tesla ,Cybertruck Tri Motor,3.0,210,750,267,710.0,Rapid charging possible,All Wheel Drive,Type 2 CCS,Pickup,N,6,83250.00000000001
+34,Mazda ,MX-30 ,9.0,150,180,178,240.0,Rapid charging possible,Front Wheel Drive,Type 2 CCS,SUV,C,5,36237.060000000005
+35,Nissan ,Leaf e+,7.3,157,325,172,390.0,Rapid charging possible,Front Wheel Drive,Type 2 CHAdeMO,Hatchback,C,5,41333.07000000001
+36,Lexus ,UX 300e,7.5,160,270,193,190.0,Rapid charging possible,Front Wheel Drive,Type 2 CHAdeMO,SUV,C,5,55500.00000000001
+37,CUPRA ,el-Born ,6.5,160,425,181,570.0,Rapid charging possible,Rear Wheel Drive,Type 2 CCS,Hatchback,C,4,49950.00000000001
+38,Renault ,Zoe ZE50 R135,9.5,140,310,168,230.0,Rapid charging possible,Front Wheel Drive,Type 2 CCS,Hatchback,B,5,36777.630000000005
+39,Mercedes ,EQA ,5.0,200,350,171,440.0,Rapid charging possible,All Wheel Drive,Type 2 CCS,SUV,C,5,49950.00000000001
+40,Tesla ,Model S Long Range,3.8,250,515,184,560.0,Rapid charging possible,All Wheel Drive,Type 2,Liftback,F,5,88788.90000000001
+41,Hyundai ,Kona Electric 39 kWh,9.9,155,255,154,210.0,Rapid charging possible,Front Wheel Drive,Type 2 CCS,SUV,B,5,37707.810000000005
+42,Audi ,e-tron Sportback 55 quattro,5.7,200,380,228,610.0,Rapid charging possible,All Wheel Drive,Type 2 CCS,SUV,E,5,90619.29000000001
+43,Skoda ,CITIGOe iV ,12.3,130,195,166,170.0,Rapid charging possible,Front Wheel Drive,Type 2 CCS,Hatchback,A,4,27232.74
+44,SEAT ,Mii Electric ,12.3,130,195,166,170.0,Rapid charging possible,Front Wheel Drive,Type 2 CCS,Hatchback,A,4,22343.190000000002
+45,Kia ,e-Soul 64 kWh,7.9,167,365,175,340.0,Rapid charging possible,Front Wheel Drive,Type 2 CCS,SUV,B,5,40889.07000000001
+46,Opel ,Ampera-e ,7.3,150,335,173,210.0,Rapid charging possible,Front Wheel Drive,Type 2 CCS,MPV,B,5,46515.66
+47,Porsche ,Taycan 4S,4.0,250,365,195,730.0,Rapid charging possible,All Wheel Drive,Type 2 CCS,Sedan,F,4,114268.95000000001
+48,Lightyear ,One ,10.0,150,575,104,540.0,Rapid charging possible,All Wheel Drive,Type 2 CCS,Liftback,F,5,165390.00000000003
+49,Aiways ,U5 ,9.0,150,335,188,350.0,Rapid charging possible,Front Wheel Drive,Type 2 CCS,SUV,C,5,40023.270000000004
+50,Audi ,e-tron 55 quattro,5.7,200,365,237,590.0,Rapid charging possible,All Wheel Drive,Type 2 CCS,SUV,E,5,88183.95000000001
+51,Tesla ,Roadster ,2.1,410,970,206,920.0,Rapid charging possible,All Wheel Drive,Type 2 CCS,Cabrio,S,4,238650.00000000003
+52,Opel ,Mokka-e ,8.5,150,255,176,390.0,Rapid charging possible,Front Wheel Drive,Type 2 CCS,SUV,B,5,38850.0
+53,Skoda ,Enyaq iV 80,8.8,160,420,183,560.0,Rapid charging possible,Rear Wheel Drive,Type 2 CCS,SUV,C,5,44400.00000000001
+54,Tesla ,Model X Long Range,4.6,250,450,211,490.0,Rapid charging possible,All Wheel Drive,Type 2,SUV,F,7,95448.90000000001
+55,Honda ,e Advance,8.3,145,170,168,190.0,Rapid charging possible,Rear Wheel Drive,Type 2 CCS,Hatchback,B,4,39872.310000000005
+56,DS ,3 Crossback E-Tense,8.7,150,250,180,380.0,Rapid charging possible,Front Wheel Drive,Type 2 CCS,SUV,B,5,41538.420000000006
+57,Renault ,Twingo ZE,12.6,135,130,164,,Rapid charging not possible,Rear Wheel Drive,Type 2,Hatchback,A,4,27516.9
+58,Citroen ,e-C4 ,9.7,150,250,180,380.0,Rapid charging possible,Front Wheel Drive,Type 2 CCS,SUV,C,5,44400.00000000001
+59,Tesla ,Model S Performance,2.5,261,505,188,550.0,Rapid charging possible,All Wheel Drive,Type 2,Liftback,F,5,107658.90000000001
+60,Renault ,Zoe ZE40 R110,11.4,135,255,161,230.0,Rapid charging possible,Front Wheel Drive,Type 2 CCS,Hatchback,B,5,32449.74
+61,Tesla ,Model Y Long Range Performance,3.7,241,410,177,900.0,Rapid charging possible,All Wheel Drive,Type 2 CCS,SUV,D,7,72838.20000000001
+62,Nissan ,Ariya 87kWh,7.6,160,440,198,520.0,Rapid charging possible,Front Wheel Drive,Type 2 CCS,Hatchback,C,5,55500.00000000001
+63,Jaguar ,I-Pace ,4.8,200,365,232,340.0,Rapid charging possible,All Wheel Drive,Type 2 CCS,SUV,E,5,83639.61
+64,Ford ,Mustang Mach-E ER RWD,7.0,180,450,200,430.0,Rapid charging possible,Rear Wheel Drive,Type 2 CCS,SUV,D,5,60467.25000000001
+65,Porsche ,Taycan 4S Plus,4.0,250,425,197,890.0,Rapid charging possible,All Wheel Drive,Type 2 CCS,Sedan,F,4,121325.22000000002
+66,Nissan ,e-NV200 Evalia ,14.0,123,190,200,190.0,Rapid charging possible,Front Wheel Drive,Type 1 CHAdeMO,SPV,N,7,36903.060000000005
+67,Tesla ,Cybertruck Dual Motor,5.0,190,460,261,710.0,Rapid charging possible,All Wheel Drive,Type 2 CCS,Pickup,N,6,61050.00000000001
+68,Renault ,Kangoo Maxi ZE 33,22.4,130,160,194,,Rapid charging not possible,Front Wheel Drive,Type 2,SPV,N,5,42180.00000000001
+69,Ford ,Mustang Mach-E ER AWD,6.0,180,430,209,410.0,Rapid charging possible,All Wheel Drive,Type 2 CCS,SUV,D,5,69819.0
+70,BMW ,i3s 120 Ah,6.9,160,230,165,260.0,Rapid charging possible,Rear Wheel Drive,Type 2 CCS,Hatchback,B,4,46093.86
+71,Skoda ,Enyaq iV 80X,7.0,160,400,193,540.0,Rapid charging possible,All Wheel Drive,Type 2 CCS,SUV,C,5,49950.00000000001
+72,Porsche ,Taycan Cross Turismo ,3.5,250,385,217,770.0,Rapid charging possible,All Wheel Drive,Type 2 CCS,Station,F,4,166500.00000000003
+73,Byton ,M-Byte 95 kWh 4WD,5.5,190,390,244,460.0,Rapid charging possible,All Wheel Drive,Type 2 CCS,SUV,E,5,71040.0
+74,Sono ,Sion ,9.0,140,225,156,270.0,Rapid charging possible,Front Wheel Drive,Type 2 CCS,Hatchback,C,5,28305.000000000004
+75,Kia ,e-Niro 39 kWh,9.8,155,235,167,230.0,Rapid charging possible,Front Wheel Drive,Type 2 CCS,SUV,C,5,38184.0
+76,Audi ,Q4 Sportback e-tron ,6.3,180,410,188,550.0,Rapid charging possible,All Wheel Drive,Type 2 CCS,SUV,D,5,63825.00000000001
+77,Smart ,EQ forfour ,12.7,130,95,176,,Rapid charging not possible,Rear Wheel Drive,Type 2,Hatchback,A,4,24453.300000000003
+78,Ford ,Mustang Mach-E SR AWD,6.0,180,340,206,360.0,Rapid charging possible,All Wheel Drive,Type 2 CCS,SUV,D,5,59940.00000000001
+79,Porsche ,Taycan Turbo,3.2,260,390,215,810.0,Rapid charging possible,All Wheel Drive,Type 2 CCS,Sedan,F,4,164614.11000000002
+80,Volkswagen ,ID.3 1st,7.3,160,340,171,470.0,Rapid charging possible,Rear Wheel Drive,Type 2 CCS,Hatchback,C,5,43275.57000000001
+81,Tesla ,Model X Performance,2.8,250,440,216,480.0,Rapid charging possible,All Wheel Drive,Type 2,SUV,F,7,114318.90000000001
+82,Smart ,EQ fortwo coupe,11.6,130,100,167,,Rapid charging not possible,Rear Wheel Drive,Type 2,Hatchback,A,2,23739.570000000003
+83,Ford ,Mustang Mach-E SR RWD,6.6,180,360,194,380.0,Rapid charging possible,Rear Wheel Drive,Type 2 CCS,SUV,D,5,52059.00000000001
+84,Mercedes ,EQV 300 Long,10.0,140,330,273,290.0,Rapid charging possible,Front Wheel Drive,Type 2 CCS,SPV,N,7,78400.41
+85,Fiat ,500e Hatchback,9.0,150,250,168,330.0,Rapid charging possible,Front Wheel Drive,Type 2 CCS,Hatchback,B,4,38739.0
+86,Tesla ,Cybertruck Single Motor,7.0,180,390,256,740.0,Rapid charging possible,Rear Wheel Drive,Type 2 CCS,Pickup,N,6,49950.00000000001
+87,Audi ,e-tron Sportback 50 quattro,6.8,190,295,219,470.0,Rapid charging possible,All Wheel Drive,Type 2 CCS,SUV,E,5,77201.61
+88,Skoda ,Enyaq iV vRS,6.2,180,400,193,540.0,Rapid charging possible,All Wheel Drive,Type 2 CCS,SUV,C,5,52725.00000000001
+89,Skoda ,Enyaq iV 60,9.0,160,320,181,440.0,Rapid charging possible,Rear Wheel Drive,Type 2 CCS,SUV,C,5,41625.00000000001
+90,Audi ,e-tron S 55 quattro,4.5,210,320,270,510.0,Rapid charging possible,All Wheel Drive,Type 2 CCS,SUV,E,5,104118.00000000001
+91,Smart ,EQ fortwo cabrio,11.9,130,95,176,,Rapid charging not possible,Rear Wheel Drive,Type 2,Cabrio,A,2,27267.15
+92,Kia ,e-Soul 64 kWh,7.9,167,365,175,320.0,Rapid charging possible,Front Wheel Drive,Type 2 CCS,SUV,B,5,40889.07000000001
+93,Nissan ,Ariya e-4ORCE 87kWh,5.7,200,420,207,500.0,Rapid charging possible,All Wheel Drive,Type 2 CCS,Hatchback,C,5,63825.00000000001
+94,Fiat ,500e Convertible,9.0,150,250,168,330.0,Rapid charging possible,Front Wheel Drive,Type 2 CCS,Cabrio,B,4,42069.00000000001
+95,Volkswagen ,ID.3 Pro Performance,7.3,160,340,171,470.0,Rapid charging possible,Rear Wheel Drive,Type 2 CCS,Hatchback,C,5,39488.25
+96,Kia ,e-Soul 39 kWh,9.9,157,230,170,220.0,Rapid charging possible,Front Wheel Drive,Type 2 CCS,SUV,B,5,36777.630000000005
+97,Byton ,M-Byte 72 kWh 2WD,7.5,190,325,222,420.0,Rapid charging possible,Rear Wheel Drive,Type 2 CCS,SUV,E,5,59385.00000000001
+98,Nissan ,Ariya 63kWh,7.5,160,330,191,440.0,Rapid charging possible,Front Wheel Drive,Type 2 CCS,Hatchback,C,5,49950.00000000001
+99,Audi ,e-tron S Sportback 55 quattro,4.5,210,335,258,540.0,Rapid charging possible,All Wheel Drive,Type 2 CCS,SUV,E,5,106615.50000000001
+100,Nissan ,Ariya e-4ORCE 63kWh,5.9,200,325,194,440.0,Rapid charging possible,All Wheel Drive,Type 2 CCS,Hatchback,C,5,55500.00000000001
+101,Nissan ,Ariya e-4ORCE 87kWh Performance,5.1,200,375,232,450.0,Rapid charging possible,All Wheel Drive,Type 2 CCS,Hatchback,C,5,72150.0
+102,Byton ,M-Byte 95 kWh 2WD,7.5,190,400,238,480.0,Rapid charging possible,All Wheel Drive,Type 2 CCS,SUV,E,5,68820.0

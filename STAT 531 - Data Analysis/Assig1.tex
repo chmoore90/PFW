@@ -1,0 +1,628 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={STAT 531 Assignment 1},
+  pdfauthor={Chloe Moore},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{STAT 531 Assignment 1}
+\author{Chloe Moore}
+\date{2024-09-27}
+
+\begin{document}
+\maketitle
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggplot2)}
+\NormalTok{data }\OtherTok{=} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"Loandefault.csv"}\NormalTok{, }\AttributeTok{header =} \ConstantTok{TRUE}\NormalTok{)}
+\FunctionTok{attach}\NormalTok{(data)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{question-1}{%
+\subsubsection{Question 1:}\label{question-1}}
+
+\hypertarget{amt_income_total}{%
+\paragraph{AMT\_INCOME\_TOTAL}\label{amt_income_total}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(data, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{AMT\_INCOME\_TOTAL)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{bins=}\DecValTok{20}\NormalTok{, }\AttributeTok{fill=}\StringTok{"steelblue"}\NormalTok{, }\AttributeTok{color=}\StringTok{"black"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Assig1_files/figure-latex/unnamed-chunk-2-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(AMT\_INCOME\_TOTAL)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      Min.   1st Qu.    Median      Mean   3rd Qu.      Max. 
+##     25650    112500    147150    168798    202500 117000000
+\end{verbatim}
+
+\hypertarget{response-part-1}{%
+\paragraph{Response (part 1):}\label{response-part-1}}
+
+This distribution is extremely skewed right. The range between the
+maximum and minimum values is also huge. The right skew indicates there
+are not many outlying high values, as otherwise their bars would show up
+on the histogram. Since there are so few of these high outliers, I think
+we can safely eliminate them. To do this, while still preserving as much
+data as possible, I removed the top 2.5\% of the values. In statistical
+studies, it is common to use an alpha level of 0.05, where the highest
+and lowest 2.5\% of the distribution are considered significant. I am
+simply following this precedent, except I have elected to keep the lower
+2.5\% because the right skew indicates the data on this side of the
+graph that may not be outliers (at least not as extreme).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{upper\_bound }\OtherTok{=} \FunctionTok{quantile}\NormalTok{(AMT\_INCOME\_TOTAL, }\FloatTok{0.975}\NormalTok{)}
+\NormalTok{data\_capped }\OtherTok{=} \FunctionTok{subset}\NormalTok{(data, AMT\_INCOME\_TOTAL }\SpecialCharTok{\textless{}=}\NormalTok{ upper\_bound)}
+
+\FunctionTok{ggplot}\NormalTok{(data\_capped, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{AMT\_INCOME\_TOTAL)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{bins=}\DecValTok{20}\NormalTok{, }\AttributeTok{fill=}\StringTok{"steelblue"}\NormalTok{, }\AttributeTok{color=}\StringTok{"black"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Assig1_files/figure-latex/unnamed-chunk-3-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(data\_capped}\SpecialCharTok{$}\NormalTok{AMT\_INCOME\_TOTAL)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   25650  112500  144000  159861  202500  405000
+\end{verbatim}
+
+\hypertarget{response-part-2}{%
+\paragraph{Response (part 2):}\label{response-part-2}}
+
+The new graph is still skewed right, but now we can actually see where
+the majority of our values lie. The distribution has one mode and the
+values cluster around 150,000. We can see the affect the outliers were
+having on the mean, as it is much lower now than when the outliers were
+included.
+
+\hypertarget{were-going-to-keep-using-the-capped-data-set-for-the-rest-of-the-assignment.}{%
+\subsubsection{We're going to keep using the capped data set for the
+rest of the
+assignment.}\label{were-going-to-keep-using-the-capped-data-set-for-the-rest-of-the-assignment.}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{detach}\NormalTok{(data)}
+\FunctionTok{attach}\NormalTok{(data\_capped)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{amt_credit}{%
+\paragraph{AMT\_CREDIT}\label{amt_credit}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(data\_capped, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{AMT\_CREDIT)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{bins=}\DecValTok{20}\NormalTok{, }\AttributeTok{fill=}\StringTok{"orange"}\NormalTok{, }\AttributeTok{color=}\StringTok{"black"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Assig1_files/figure-latex/unnamed-chunk-5-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(AMT\_CREDIT)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   45000  270000  508496  589225  808650 4050000
+\end{verbatim}
+
+\hypertarget{response}{%
+\paragraph{Response:}\label{response}}
+
+Even on our new capped data set, this distribution is skewed right as
+well. All of its data are clustered on the left side of the chart, so
+the mode is one our lowest values. I considered cutting off the top
+2.5\% of this variable too, but ultimately I decided not to. While the
+distribution is heavily skewed, I think the data are spread out enough
+that we can work with it.
+
+\hypertarget{cnt_children}{%
+\paragraph{CNT\_CHILDREN}\label{cnt_children}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(data\_capped, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{CNT\_CHILDREN)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{bins=}\DecValTok{20}\NormalTok{, }\AttributeTok{fill=}\StringTok{"forestgreen"}\NormalTok{, }\AttributeTok{color=}\StringTok{"black"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Assig1_files/figure-latex/unnamed-chunk-6-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(CNT\_CHILDREN)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##  0.0000  0.0000  0.0000  0.4154  1.0000 19.0000
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{upper\_bound2 }\OtherTok{=} \FunctionTok{quantile}\NormalTok{(CNT\_CHILDREN, }\FloatTok{0.999}\NormalTok{)}
+\NormalTok{data\_capped2 }\OtherTok{=} \FunctionTok{subset}\NormalTok{(data\_capped, CNT\_CHILDREN }\SpecialCharTok{\textless{}=}\NormalTok{ upper\_bound2)}
+\FunctionTok{ggplot}\NormalTok{(data\_capped2, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{CNT\_CHILDREN)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{bins=}\DecValTok{10}\NormalTok{, }\AttributeTok{fill=}\StringTok{"forestgreen"}\NormalTok{, }\AttributeTok{color=}\StringTok{"black"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Assig1_files/figure-latex/unnamed-chunk-7-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(data\_capped2}\SpecialCharTok{$}\NormalTok{CNT\_CHILDREN)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##  0.0000  0.0000  0.0000  0.4131  1.0000  4.0000
+\end{verbatim}
+
+\hypertarget{response-1}{%
+\paragraph{Response:}\label{response-1}}
+
+Here we have a similar case to our AMT\_INCOME\_TOTAL, although not
+quite as dramatic. I still wanted to remove outliers so our histogram
+was more than a couple bars and a very long tail. Since the range of
+unique values for this variable is comparatively tiny (only 0-19), I had
+to be careful not to set the cap too low. I chose to remove only the top
+0.1\%.
+
+\n\n Even though we kept most of the data, we dramatically reduced the
+range of unique values for this variable. Like before, the outliers we
+removed were so few in number that dropping them shouldn't hurt our
+analysis. This data resembles the shape of our AMT\_CREDIT distribution.
+It is heavily skewed right and the mode is, in this case, our smallest
+value.
+
+\hypertarget{were-going-to-keep-using-this-new-capped-data-set-for-the-rest-of-the-assignment.}{%
+\subsubsection{We're going to keep using this NEW capped data set for
+the rest of the
+assignment.}\label{were-going-to-keep-using-this-new-capped-data-set-for-the-rest-of-the-assignment.}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{detach}\NormalTok{(data\_capped)}
+\FunctionTok{attach}\NormalTok{(data\_capped2)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{question-2}{%
+\subsubsection{Question 2}\label{question-2}}
+
+\hypertarget{amt_income_total-1}{%
+\paragraph{AMT\_INCOME\_TOTAL}\label{amt_income_total-1}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(data\_capped2, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{y=}\NormalTok{AMT\_INCOME\_TOTAL, }\AttributeTok{x=}\FunctionTok{factor}\NormalTok{(TARGET))) }\SpecialCharTok{+}
+  \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x=}\StringTok{"FINANCIAL DIFFICULTY?"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_x\_discrete}\NormalTok{(}\AttributeTok{label=}\FunctionTok{c}\NormalTok{(}\StringTok{"False"}\NormalTok{, }\StringTok{"True"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Assig1_files/figure-latex/unnamed-chunk-9-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(AMT\_INCOME\_TOTAL[TARGET}\SpecialCharTok{==}\DecValTok{1}\NormalTok{]) }\CommentTok{\# True column}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   25650  112500  135000  155108  189000  405000
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(AMT\_INCOME\_TOTAL[TARGET}\SpecialCharTok{==}\DecValTok{0}\NormalTok{]) }\CommentTok{\# False column}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   25650  112500  144000  160282  202500  405000
+\end{verbatim}
+
+\hypertarget{amt_credit-1}{%
+\paragraph{AMT\_CREDIT}\label{amt_credit-1}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(data\_capped2, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{y=}\NormalTok{AMT\_CREDIT, }\AttributeTok{x=}\FunctionTok{factor}\NormalTok{(TARGET))) }\SpecialCharTok{+}
+  \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x=}\StringTok{"FINANCIAL DIFFICULTY?"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_x\_discrete}\NormalTok{(}\AttributeTok{label=}\FunctionTok{c}\NormalTok{(}\StringTok{"False"}\NormalTok{, }\StringTok{"True"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Assig1_files/figure-latex/unnamed-chunk-10-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(AMT\_CREDIT[TARGET}\SpecialCharTok{==}\DecValTok{1}\NormalTok{]) }\CommentTok{\# True}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   45000  284400  495000  552503  728460 3020760
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(AMT\_CREDIT[TARGET}\SpecialCharTok{==}\DecValTok{0}\NormalTok{]) }\CommentTok{\# False}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   45000  270000  508496  592490  808650 4050000
+\end{verbatim}
+
+\hypertarget{cnt_children-1}{%
+\paragraph{CNT\_CHILDREN}\label{cnt_children-1}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(data\_capped2, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{y=}\NormalTok{CNT\_CHILDREN, }\AttributeTok{x=}\FunctionTok{factor}\NormalTok{(TARGET))) }\SpecialCharTok{+}
+  \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x=}\StringTok{"FINANCIAL DIFFICULTY?"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_x\_discrete}\NormalTok{(}\AttributeTok{label=}\FunctionTok{c}\NormalTok{(}\StringTok{"False"}\NormalTok{, }\StringTok{"True"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Assig1_files/figure-latex/unnamed-chunk-11-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(CNT\_CHILDREN[TARGET}\SpecialCharTok{==}\DecValTok{1}\NormalTok{]) }\CommentTok{\# True}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##  0.0000  0.0000  0.0000  0.4593  1.0000  4.0000
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(CNT\_CHILDREN[TARGET}\SpecialCharTok{==}\DecValTok{0}\NormalTok{]) }\CommentTok{\# False}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   0.000   0.000   0.000   0.409   1.000   4.000
+\end{verbatim}
+
+\hypertarget{response-part-1-1}{%
+\paragraph{Response (part 1):}\label{response-part-1-1}}
+
+For all three of our variables, the boxplots appear very similar. Their
+quantile values and even their outliers are relatively close. Although
+it's true that the data for customers with a history of financial
+difficulty (True column) have a mean, median, and quantile values that
+are slightly lower than the other customers, the difference is slight
+and I'm not prepared to make any conclusions based on it. We'd need to
+do more analysis determine that. For now, it looks like total income,
+credit and number of children do not have a significant impact on
+whether or not customers have a history of financial difficulty.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(data\_capped, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{y=}\NormalTok{CNT\_CHILDREN, }\AttributeTok{x=}\FunctionTok{factor}\NormalTok{(TARGET))) }\SpecialCharTok{+}
+  \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x=}\StringTok{"FINANCIAL DIFFICULTY?"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_x\_discrete}\NormalTok{(}\AttributeTok{label=}\FunctionTok{c}\NormalTok{(}\StringTok{"False"}\NormalTok{, }\StringTok{"True"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Assig1_files/figure-latex/unnamed-chunk-12-1.pdf}
+
+\hypertarget{responsepart-2}{%
+\paragraph{Response(part 2):}\label{responsepart-2}}
+
+Since the boxplots for CNT\_CHILDREN were so similar, I also made a box
+plot for that variable using its full range (0-19). It possible that the
+impact of having children does not appear until the count it much
+greater than average. I was surprised to find there wasn't a large
+difference with this data either. If anything, there were more data
+points for families with greater numbers of children in the ``False''
+column than there were in the True'' one! This tells me that number of
+children mostly likely doesn't have an impact of whether or not the
+client had past financial difficulties.
+
+\hypertarget{question-3}{%
+\subsubsection{Question 3}\label{question-3}}
+
+\hypertarget{own_realty}{%
+\paragraph{OWN\_REALTY}\label{own_realty}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(data\_capped2, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\FunctionTok{factor}\NormalTok{(TARGET), }\AttributeTok{fill=}\NormalTok{OWN\_REALTY)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{color=}\StringTok{"black"}\NormalTok{, }\AttributeTok{position=}\StringTok{"dodge"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x=}\StringTok{"FINANCIAL DIFFICULTY?"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_x\_discrete}\NormalTok{(}\AttributeTok{label=}\FunctionTok{c}\NormalTok{(}\StringTok{"False"}\NormalTok{, }\StringTok{"True"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Assig1_files/figure-latex/unnamed-chunk-13-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(data\_capped2, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\FunctionTok{factor}\NormalTok{(TARGET), }\AttributeTok{fill=}\NormalTok{OWN\_REALTY)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{color=}\StringTok{"black"}\NormalTok{, }\AttributeTok{position=}\StringTok{"fill"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x=}\StringTok{"FINANCIAL DIFFICULTY?"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_x\_discrete}\NormalTok{(}\AttributeTok{label=}\FunctionTok{c}\NormalTok{(}\StringTok{"False"}\NormalTok{, }\StringTok{"True"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Assig1_files/figure-latex/unnamed-chunk-13-2.pdf}
+
+\hypertarget{own_car}{%
+\paragraph{OWN\_CAR}\label{own_car}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(data\_capped2, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\FunctionTok{factor}\NormalTok{(TARGET), }\AttributeTok{fill=}\NormalTok{OWN\_CAR)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{color=}\StringTok{"black"}\NormalTok{, }\AttributeTok{position=}\StringTok{"dodge"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x=}\StringTok{"FINANCIAL DIFFICULTY?"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_x\_discrete}\NormalTok{(}\AttributeTok{label=}\FunctionTok{c}\NormalTok{(}\StringTok{"False"}\NormalTok{, }\StringTok{"True"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Assig1_files/figure-latex/unnamed-chunk-14-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(data\_capped2, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\FunctionTok{factor}\NormalTok{(TARGET), }\AttributeTok{fill=}\NormalTok{OWN\_CAR)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{color=}\StringTok{"black"}\NormalTok{, }\AttributeTok{position=}\StringTok{"fill"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x=}\StringTok{"FINANCIAL DIFFICULTY?"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_x\_discrete}\NormalTok{(}\AttributeTok{label=}\FunctionTok{c}\NormalTok{(}\StringTok{"False"}\NormalTok{, }\StringTok{"True"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Assig1_files/figure-latex/unnamed-chunk-14-2.pdf}
+
+\hypertarget{response-part-1-2}{%
+\paragraph{Response (part 1):}\label{response-part-1-2}}
+
+For the two variables, OWN\_REALTY and OWN\_CAR, I do not see any
+significant differences. Since there were a lot more data in the
+``False'' column, I needed to normalize it by putting them into a
+stacked bar graph. Once normalized, it was quite apparent that owning
+realty or cars does not have any significant influence over whether or
+not someone has had past financial struggles.
+
+\hypertarget{name_education_type}{%
+\paragraph{NAME\_EDUCATION\_TYPE}\label{name_education_type}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(data\_capped2, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{NAME\_EDUCATION\_TYPE, }\AttributeTok{fill=}\FunctionTok{factor}\NormalTok{(TARGET))) }\SpecialCharTok{+}
+  \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{color=}\StringTok{"black"}\NormalTok{, }\AttributeTok{position=}\StringTok{"dodge"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{fill=}\StringTok{"FINANCIAL DIFFICULTY?"}\NormalTok{, }\AttributeTok{x=}\StringTok{"EDUCATION TYPE"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_fill\_discrete}\NormalTok{(}\AttributeTok{label=}\FunctionTok{c}\NormalTok{(}\StringTok{"False"}\NormalTok{, }\StringTok{"True"}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{scale\_x\_discrete}\NormalTok{(}\AttributeTok{label=}\FunctionTok{c}\NormalTok{(}\StringTok{"Academic}\SpecialCharTok{\textbackslash{}n}\StringTok{Degree"}\NormalTok{, }\StringTok{"Higher"}\NormalTok{, }\StringTok{"Incomplete}\SpecialCharTok{\textbackslash{}n}\StringTok{Higher"}\NormalTok{, }\StringTok{"Lower}\SpecialCharTok{\textbackslash{}n}\StringTok{Secondary"}\NormalTok{, }\StringTok{"Secondary"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Assig1_files/figure-latex/unnamed-chunk-15-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(data\_capped2, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{fill=}\FunctionTok{factor}\NormalTok{(TARGET), }\AttributeTok{x=}\NormalTok{NAME\_EDUCATION\_TYPE)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{color=}\StringTok{"black"}\NormalTok{, }\AttributeTok{position=}\StringTok{"fill"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{fill=}\StringTok{"FINANCIAL DIFFICULTY?"}\NormalTok{, }\AttributeTok{x=}\StringTok{"EDUCATION TYPE"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_fill\_discrete}\NormalTok{(}\AttributeTok{label=}\FunctionTok{c}\NormalTok{(}\StringTok{"False"}\NormalTok{, }\StringTok{"True"}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{scale\_x\_discrete}\NormalTok{(}\AttributeTok{label=}\FunctionTok{c}\NormalTok{(}\StringTok{"Academic}\SpecialCharTok{\textbackslash{}n}\StringTok{Degree"}\NormalTok{, }\StringTok{"Higher"}\NormalTok{, }\StringTok{"Incomplete}\SpecialCharTok{\textbackslash{}n}\StringTok{Higher"}\NormalTok{, }\StringTok{"Lower}\SpecialCharTok{\textbackslash{}n}\StringTok{Secondary"}\NormalTok{, }\StringTok{"Secondary"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Assig1_files/figure-latex/unnamed-chunk-15-2.pdf}
+
+\hypertarget{response-part-2-1}{%
+\paragraph{Response (part 2)}\label{response-part-2-1}}
+
+Here, we finally see something happening! As we can see in the stacked
+bar chart, education type does influence whether or not someone has a
+history of financial difficulty.From the normalized chart, we can see
+that as the level of formal education decreases, the occurrences of past
+financial difficulty rises. While it's not a dramatic jump, this does
+support this conclusion. (Note, ``Lower secondary'' is lower than
+``Secondary'', so really it should be the last column.)
+
+\hypertarget{question-4}{%
+\subsubsection{Question 4}\label{question-4}}
+
+\hypertarget{my-question}{%
+\paragraph{My question:}\label{my-question}}
+
+Provide three research questions that relate the variables: total
+income, credit score, number of children, owning realty, owning a car,
+and education level. Your questions should not be related to past
+financial history and you don't have to use every variable.
+
+\hypertarget{chatgpt-response}{%
+\paragraph{ChatGPT response:}\label{chatgpt-response}}
+
+Here are three focused research questions that incorporate some of the
+specified variables:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  How does the level of education correlate with total income among
+  individuals who own realty compared to those who do not?
+\item
+  What is the relationship between credit score and the likelihood of
+  owning a car among families with varying numbers of children?
+\item
+  In households with children, how does total income influence the
+  decision to invest in realty, and what role does education level play
+  in this decision-making process?
+\end{enumerate}
+
+\hypertarget{question-5}{%
+\subsubsection{Question 5}\label{question-5}}
+
+\hypertarget{how-does-the-level-of-education-correlate-with-total-income-among-individuals-who-own-realty-compared-to-those-who-do-not}{%
+\paragraph{1. How does the level of education correlate with total
+income among individuals who own realty compared to those who do
+not?}\label{how-does-the-level-of-education-correlate-with-total-income-among-individuals-who-own-realty-compared-to-those-who-do-not}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(data\_capped2, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{NAME\_EDUCATION\_TYPE, }\AttributeTok{y=}\NormalTok{AMT\_INCOME\_TOTAL, }\AttributeTok{fill=}\NormalTok{OWN\_REALTY)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{scale\_x\_discrete}\NormalTok{(}\AttributeTok{label=}\FunctionTok{c}\NormalTok{(}\StringTok{"Academic}\SpecialCharTok{\textbackslash{}n}\StringTok{Degree"}\NormalTok{, }\StringTok{"Higher"}\NormalTok{, }\StringTok{"Incomplete}\SpecialCharTok{\textbackslash{}n}\StringTok{Higher"}\NormalTok{, }\StringTok{"Lower}\SpecialCharTok{\textbackslash{}n}\StringTok{Secondary"}\NormalTok{, }\StringTok{"Secondary"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Assig1_files/figure-latex/unnamed-chunk-16-1.pdf}
+
+\hypertarget{response-2}{%
+\paragraph{Response:}\label{response-2}}
+
+\n Based off this visualization, level of education and total income are
+positively correlated. The boxes represent income level, and they rise
+on the chart as education rises (recall, LowerSecondary should be the
+rightmost column). There are also no outliers at the top of the chart
+for the ``Academic degree'' column, which makes it unique compared to
+the other categories. This trend is the same among those who own realty
+and those who do not. The only interaction between academic level and
+realty ownership is at the ``Academic degree'' level, where among these
+academics, those who own realty also tend to have higher total incomes
+(or vice versa).
+
+\end{document}
