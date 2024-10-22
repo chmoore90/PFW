@@ -1,0 +1,91 @@
+---
+title: "Assignment 2"
+author: "Chloe Moore"
+date: "`r Sys.Date()`"
+output:
+  word_document: default
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, message=FALSE}
+library(tidyverse)
+library(ggplot2)
+```
+
+### Question 11. Exercise 2.20
+
+```{r}
+nursing_homeDF = read.csv("WiscNursingHome.csv")
+nursing_home2001 = subset(nursing_homeDF, CRYEAR == 2001) %>%
+  mutate(
+    LOGTPY = log(TPY),
+    LOGNUMBED = log(NUMBED)
+  )
+```
+
+#### Part a)
+```{r}
+summary(nursing_home2001$LOGTPY) # summary statistics LOGTPY
+summary(nursing_home2001$LOGNUMBED) # summary statistics LOGNUMBED
+
+cor(nursing_home2001$LOGTPY, nursing_home2001$LOGNUMBED) # correlation statistic
+
+ggplot(nursing_home2001, aes(x=LOGNUMBED, y=LOGTPY)) +
+  geom_point()
+```
+
+\n Comments: The correlation statistic is very close to 1, which indicates LOGTPY and LOGNUMBED are closely, positively correlated. The scatter plot chart appears to show a linear trend.
+
+#### Part b)
+```{r}
+fit1 = lm(LOGTPY ~ LOGNUMBED, nursing_home2001)
+summary1 = summary(fit1)
+summary1
+```
+\n Comments: R^2 = 0.9664 (adjusted R^2=0.9663). Regression coefficient LOGNUMBED = 1.01923. t-statistic = 100.73
+
+#### Part c)
+```{r}
+b1 = summary1$coefficients[2, 1]
+seb1 = summary1$coefficients[2, 2]
+tcrit = 2 # for t_(353, 0.975)
+```
+
+\n (I) $H_0:\beta_{1}=0$ vs $H_a:\beta_{1}\ne0$. We reject the null hypothesis because our t-statistic is greater than the critical t-value. The p-value is less than our alpha level of 0.05, which supports this rejection.
+
+```{r}
+tstat = b1/seb1 # 100.730193
+pval = 2*(1-pt(abs(tstat), 353)) # 0.0000000...
+```
+
+\n (II) $H_0:\beta_{1}=1$ vs $H_a:\beta_{1}\ne1$. We fail to reject the null hypothesis because our t-statistic is less than the critical t-value (however, it's very close!). The p-value is greater than our alpha level of 0.05, which supports this conclusion.
+
+```{r}
+tstat = (b1-1)/seb1 # 1.900567
+pval = 2*(1-pt(abs(tstat), 353)) # 0.058173
+```
+
+\n (III) $H_0:\beta_{1}=1$ vs $H_a:\beta_{1}>1$. We might fail to reject the null hypothesis because our t-statistic is less than the critical t-value... But the p-value is less than our alpha level of 0.05, so in this case, we will actually reject the null hypothesis.
+
+```{r}
+tstat = (b1-1)/seb1 # 1.900567
+pval = (1-pt(abs(tstat), 353)) # 0.029087
+```
+
+\n (IV) $H_0:\beta_{1}=1$ vs $H_a:\beta_{1}<1$. We might fail to reject the null hypothesis because our t-statistic is less than the critical t-value... And the p-value is greater than our alpha level of 0.05, so we will indeed fail to reject the null hypothesis.
+
+```{r}
+tstat = (b1-1)/seb1 # 1.900567
+pval = pt(abs(tstat), 353) # 0.970913
+```
+
+
+
+
+
+

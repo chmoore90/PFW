@@ -1,0 +1,281 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Assignment 2},
+  pdfauthor={Chloe Moore},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Assignment 2}
+\author{Chloe Moore}
+\date{2024-10-16}
+
+\begin{document}
+\maketitle
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\FunctionTok{library}\NormalTok{(ggplot2)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{question-11.-exercise-2.20}{%
+\subsubsection{Question 11. Exercise
+2.20}\label{question-11.-exercise-2.20}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{nursing\_homeDF }\OtherTok{=} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"WiscNursingHome.csv"}\NormalTok{)}
+\NormalTok{nursing\_home2001 }\OtherTok{=} \FunctionTok{subset}\NormalTok{(nursing\_homeDF, CRYEAR }\SpecialCharTok{==} \DecValTok{2001}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{(}
+    \AttributeTok{LOGTPY =} \FunctionTok{log}\NormalTok{(TPY),}
+    \AttributeTok{LOGNUMBED =} \FunctionTok{log}\NormalTok{(NUMBED)}
+\NormalTok{  )}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{part-a}{%
+\paragraph{Part a)}\label{part-a}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(nursing\_home2001}\SpecialCharTok{$}\NormalTok{LOGTPY) }\CommentTok{\# summary statistics LOGTPY}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   2.511   4.041   4.396   4.368   4.700   6.088
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(nursing\_home2001}\SpecialCharTok{$}\NormalTok{LOGNUMBED) }\CommentTok{\# summary statistics LOGNUMBED}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   2.890   4.094   4.500   4.457   4.779   6.125
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cor}\NormalTok{(nursing\_home2001}\SpecialCharTok{$}\NormalTok{LOGTPY, nursing\_home2001}\SpecialCharTok{$}\NormalTok{LOGNUMBED) }\CommentTok{\# correlation statistic}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.9830461
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(nursing\_home2001, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{LOGNUMBED, }\AttributeTok{y=}\NormalTok{LOGTPY)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{assig2_files/figure-latex/unnamed-chunk-3-1.pdf}
+
+\n Comments: The correlation statistic is very close to 1, which
+indicates LOGTPY and LOGNUMBED are closely, positively correlated. The
+scatter plot chart appears to show a linear trend.
+
+\hypertarget{part-b}{%
+\paragraph{Part b)}\label{part-b}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{fit1 }\OtherTok{=} \FunctionTok{lm}\NormalTok{(LOGTPY }\SpecialCharTok{\textasciitilde{}}\NormalTok{ LOGNUMBED, nursing\_home2001)}
+\NormalTok{summary1 }\OtherTok{=} \FunctionTok{summary}\NormalTok{(fit1)}
+\NormalTok{summary1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = LOGTPY ~ LOGNUMBED, data = nursing_home2001)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -0.87482 -0.02201  0.01517  0.05316  0.28862 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(>|t|)    
+## (Intercept) -0.17469    0.04537   -3.85  0.00014 ***
+## LOGNUMBED    1.01923    0.01012  100.73  < 2e-16 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 0.09373 on 353 degrees of freedom
+## Multiple R-squared:  0.9664, Adjusted R-squared:  0.9663 
+## F-statistic: 1.015e+04 on 1 and 353 DF,  p-value: < 2.2e-16
+\end{verbatim}
+
+\n Comments: R\^{}2 = 0.9664 (adjusted R\^{}2=0.9663). Regression
+coefficient LOGNUMBED = 1.01923. t-statistic = 100.73
+
+\hypertarget{part-c}{%
+\paragraph{Part c)}\label{part-c}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{b1 }\OtherTok{=}\NormalTok{ summary1}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{2}\NormalTok{, }\DecValTok{1}\NormalTok{]}
+\NormalTok{seb1 }\OtherTok{=}\NormalTok{ summary1}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{2}\NormalTok{, }\DecValTok{2}\NormalTok{]}
+\NormalTok{tcrit }\OtherTok{=} \DecValTok{2} \CommentTok{\# for t\_(353, 0.975)}
+\end{Highlighting}
+\end{Shaded}
+
+\n (I) \(H_0:\beta_{1}=0\) vs \(H_a:\beta_{1}\ne0\). We reject the null
+hypothesis because our t-statistic is greater than the critical t-value.
+The p-value is less than our alpha level of 0.05, which supports this
+rejection.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{tstat }\OtherTok{=}\NormalTok{ b1}\SpecialCharTok{/}\NormalTok{seb1 }\CommentTok{\# 100.730193}
+\NormalTok{pval }\OtherTok{=} \DecValTok{2}\SpecialCharTok{*}\NormalTok{(}\DecValTok{1}\SpecialCharTok{{-}}\FunctionTok{pt}\NormalTok{(}\FunctionTok{abs}\NormalTok{(tstat), }\DecValTok{353}\NormalTok{)) }\CommentTok{\# 0.0000000...}
+\end{Highlighting}
+\end{Shaded}
+
+\n (II) \(H_0:\beta_{1}=1\) vs \(H_a:\beta_{1}\ne1\). We fail to reject
+the null hypothesis because our t-statistic is less than the critical
+t-value (however, it's very close!). The p-value is greater than our
+alpha level of 0.05, which supports this conclusion.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{tstat }\OtherTok{=}\NormalTok{ (b1}\DecValTok{{-}1}\NormalTok{)}\SpecialCharTok{/}\NormalTok{seb1 }\CommentTok{\# 1.900567}
+\NormalTok{pval }\OtherTok{=} \DecValTok{2}\SpecialCharTok{*}\NormalTok{(}\DecValTok{1}\SpecialCharTok{{-}}\FunctionTok{pt}\NormalTok{(}\FunctionTok{abs}\NormalTok{(tstat), }\DecValTok{353}\NormalTok{)) }\CommentTok{\# 0.058173}
+\end{Highlighting}
+\end{Shaded}
+
+\n (III) \(H_0:\beta_{1}=1\) vs \(H_a:\beta_{1}>1\). We might fail to
+reject the null hypothesis because our t-statistic is less than the
+critical t-value\ldots{} But the p-value is less than our alpha level of
+0.05, so in this case, we will actually reject the null hypothesis.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{tstat }\OtherTok{=}\NormalTok{ (b1}\DecValTok{{-}1}\NormalTok{)}\SpecialCharTok{/}\NormalTok{seb1 }\CommentTok{\# 1.900567}
+\NormalTok{pval }\OtherTok{=}\NormalTok{ (}\DecValTok{1}\SpecialCharTok{{-}}\FunctionTok{pt}\NormalTok{(}\FunctionTok{abs}\NormalTok{(tstat), }\DecValTok{353}\NormalTok{)) }\CommentTok{\# 0.029087}
+\end{Highlighting}
+\end{Shaded}
+
+\n (IV) \(H_0:\beta_{1}=1\) vs \(H_a:\beta_{1}<1\). We might fail to
+reject the null hypothesis because our t-statistic is less than the
+critical t-value\ldots{} And the p-value is greater than our alpha level
+of 0.05, so we will indeed fail to reject the null hypothesis.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{tstat }\OtherTok{=}\NormalTok{ (b1}\DecValTok{{-}1}\NormalTok{)}\SpecialCharTok{/}\NormalTok{seb1 }\CommentTok{\# 1.900567}
+\NormalTok{pval }\OtherTok{=} \FunctionTok{pt}\NormalTok{(}\FunctionTok{abs}\NormalTok{(tstat), }\DecValTok{353}\NormalTok{) }\CommentTok{\# 0.970913}
+\end{Highlighting}
+\end{Shaded}
+
+
+\end{document}
